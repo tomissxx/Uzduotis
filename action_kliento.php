@@ -1,9 +1,10 @@
 <?php 
 include 'config.php';
+include 'menu.php';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
-	die("Nepavyko prisijungti: ".$conn->connect_error);
+	die("Prisijungimas nepavko: ".$conn->connect_error);
 }
 $client_id = $_GET['client_id'];
 $sql = "SELECT * FROM client_list WHERE aptarnautas = 0";
